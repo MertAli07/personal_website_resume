@@ -11,6 +11,32 @@ const Particles = () => {
       .getPropertyValue('--accent')
       .trim() || '#7a99c1'
 
+    // Inject keyframes if not already present
+    const styleId = 'particle-animation-styles'
+    if (!document.getElementById(styleId)) {
+      const style = document.createElement('style')
+      style.id = styleId
+      style.textContent = `
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0) translateX(0);
+            opacity: 0;
+          }
+          10% {
+            opacity: 0.4;
+          }
+          90% {
+            opacity: 0.3;
+          }
+          100% {
+            transform: translateY(-100vh) translateX(30px);
+            opacity: 0;
+          }
+        }
+      `
+      document.head.appendChild(style)
+    }
+
     const particles: HTMLDivElement[] = []
     for (let i = 0; i < 20; i++) {
       const particle = document.createElement('div')
@@ -24,8 +50,8 @@ const Particles = () => {
       particle.style.opacity = '0'
       particle.style.left = Math.random() * 100 + '%'
       particle.style.bottom = '0px'
+      particle.style.animation = `float ${12 + Math.random() * 6}s ease-in-out infinite`
       particle.style.animationDelay = Math.random() * 5 + 's'
-      particle.style.animationDuration = (12 + Math.random() * 6) + 's'
       containerRef.current.appendChild(particle)
       particles.push(particle)
     }
@@ -36,6 +62,7 @@ const Particles = () => {
           particle.parentNode.removeChild(particle)
         }
       })
+      // Note: We keep the style tag as it's shared and harmless
     }
   }, [])
 
