@@ -4,6 +4,10 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  safelist: [
+    'particle',
+    'particles',
+  ],
   theme: {
     extend: {
       colors: {
