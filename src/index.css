@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Frieren-inspired palette: soft, muted, nostalgic & gentle */
+    --bg: #fafaf7;
+    --panel: #f3f1ed;
+    --text: #2b2a28;
+    --muted: #6a6a6a;
+    --accent: #7a99c1; /* Soft pastel blue */
+    --border: rgba(0,0,0,0.08);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a1d23;
+      --panel: #23262d;
+      --text: #e4e4e1;
+      --muted: #a0a0a0;
+      --accent: #8ba9ca;
+      --border: rgba(255,255,255,0.08);
+    }
+  }
+
+  body {
+    @apply m-0 bg-[var(--bg)] text-[var(--text)] font-body leading-relaxed relative overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .particles {
+    @apply fixed top-0 left-0 w-full h-full pointer-events-none z-0;
+  }
+
+  .particle {
+    @apply absolute w-[3px] h-[3px] bg-[var(--accent)] rounded-full opacity-0;
+    animation: float 15s infinite ease-in-out;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) translateX(0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.4;
+    }
+    90% {
+      opacity: 0.3;
+    }
+    100% {
+      transform: translateY(-100vh) translateX(30px);
+      opacity: 0;
+    }
+  }
+
+  .section-title {
+    @apply font-display text-[2.2rem] mb-4 text-[var(--accent)] relative inline-block;
+  }
+
+  .section-title::after {
+    content: '✦';
+    @apply ml-2 text-[0.7em] opacity-30;
+    animation: sparkle 3s ease-in-out infinite;
+  }
+
+  @keyframes sparkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+  }
+
+  .card {
+    @apply bg-[var(--panel)] border border-[var(--border)] rounded-[10px] p-6 transition-all duration-300 relative overflow-hidden;
+  }
+
+  .card::before {
+    content: '';
+    @apply absolute top-0 left-[-100%] w-full h-full;
+    background: linear-gradient(90deg, transparent, rgba(122, 153, 193, 0.05), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .card:hover::before {
+    @apply left-full;
+  }
+
+  .card:hover {
+    @apply -translate-y-1;
+    box-shadow: 0 12px 28px rgba(122, 153, 193, 0.15);
+  }
+
+  .tag {
+    @apply inline-block mt-2 px-[0.65rem] py-[0.3rem] text-[0.75rem] border border-[var(--accent)] rounded-full text-[var(--accent)];
+  }
+}
+
