@@ -11,6 +11,7 @@ const Particles = () => {
       const particle = document.createElement('div')
       particle.className = 'particle'
       particle.style.left = Math.random() * 100 + '%'
+      particle.style.bottom = '0px'
       particle.style.animationDelay = Math.random() * 5 + 's'
       particle.style.animationDuration = (12 + Math.random() * 6) + 's'
       containerRef.current.appendChild(particle)
