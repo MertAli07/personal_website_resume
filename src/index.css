@@ -13,8 +13,27 @@
     --border: rgba(0,0,0,0.08);
   }
 
+  :root.dark {
+    --bg: #1a1d23;
+    --panel: #23262d;
+    --text: #e4e4e1;
+    --muted: #a0a0a0;
+    --accent: #8ba9ca;
+    --border: rgba(255,255,255,0.08);
+  }
+
+  :root.light {
+    --bg: #fafaf7;
+    --panel: #f3f1ed;
+    --text: #2b2a28;
+    --muted: #6a6a6a;
+    --accent: #7a99c1;
+    --border: rgba(0,0,0,0.08);
+  }
+
+  /* Fallback for system preference if no class is set */
   @media (prefers-color-scheme: dark) {
-    :root {
+    :root:not(.light):not(.dark) {
       --bg: #1a1d23;
       --panel: #23262d;
       --text: #e4e4e1;

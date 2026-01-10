@@ -18,7 +18,7 @@ const Projects = () => {
   ]
 
   return (
-    <section id="projects" className="mb-16">
+    <section className="mb-16">
       <h2 className="section-title">Selected Projects</h2>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-6">
         {projects.map((project) => (
