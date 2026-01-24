@@ -1,4 +1,6 @@
 import taxDiagramPreview from '../assets/images/tax_diagram.png'
+import metuMailDiagramPreview from '../assets/images/metu_mail_diagram.png'
+import ministryOfEducationDiagramPreview from '../assets/images/meb_ttkb_diagram.png'
 
 export type Diagram = {
   slug: string
@@ -13,11 +15,13 @@ export const diagrams: Diagram[] = [
     slug: 'aws-agent-architecture',
     title: 'METU Student Affairs',
     description: 'Multi-agent METU Student Affairs Assistant System',
+    previewImage: metuMailDiagramPreview
   },
   {
-    slug: 'scraping-knowledge-pipeline',
-    title: 'Scraping & Knowledge Pipeline',
-    description: 'Manual trigger → S3 → embeddings → query-time retrieval.',
+    slug: 'ministry-of-education',
+    title: 'Ministry of Education',
+    description: 'Scrape multimodal sources and build a knowledge pipeline',
+    previewImage: ministryOfEducationDiagramPreview
   },
   {
     slug: 'aws-presentation',

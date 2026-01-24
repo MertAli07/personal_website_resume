@@ -32,7 +32,6 @@ const Diagrams = () => {
                   src={diagram.url}
                   className="pointer-events-none"
                   title={`${diagram.title} preview`}
-                  scrolling="no"
                 />
               ) : (
                 <span className="preview-placeholder">Preview coming soon</span>
