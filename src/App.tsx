@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import ProjectsPage from './pages/ProjectsPage'
 import NotesPage from './pages/NotesPage'
 import DiagramsPage from './pages/DiagramsPage'
+import DiagramDetailPage from './pages/DiagramDetailPage'
 import CVPage from './pages/CVPage'
 import ContactPage from './pages/ContactPage'
 
@@ -22,6 +23,7 @@ function App() {
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/notes" element={<NotesPage />} />
             <Route path="/diagrams" element={<DiagramsPage />} />
+            <Route path="/diagrams/:slug" element={<DiagramDetailPage />} />
             <Route path="/cv" element={<CVPage />} />
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
