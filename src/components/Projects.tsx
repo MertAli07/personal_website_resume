@@ -1,40 +1,10 @@
-const Projects = () => {
-  const projects = [
-    {
-      rank: 'A-Rank Quest',
-      title: 'LLM-Powered Knowledge Agent',
-      description: 'A retrieval-augmented system balancing cost, clarity, and control.',
-      tag: 'AI / RAG',
-      statusLabel: 'Quest Completed',
-      statusClass: 'status-completed',
-      linkLabel: 'View Quest Details',
-      link: '#',
-    },
-    {
-      rank: 'B-Rank Quest',
-      title: 'Financial Forecasting Lab',
-      description: 'Experimental models combining price trends with sentiment signals.',
-      tag: 'ML / Time-Series',
-      statusLabel: 'In Progress',
-      statusClass: 'status-progress',
-      linkLabel: 'View Quest Details',
-      link: '#',
-    },
-    {
-      rank: 'S-Rank Quest',
-      title: 'Personal Data Inventory System',
-      description: 'A structured pipeline to collect and classify knowledge sources.',
-      tag: 'Data Engineering',
-      statusLabel: 'Legendary Achievement',
-      statusClass: 'status-legendary',
-      linkLabel: 'View Quest Details',
-      link: '#',
-    },
-  ]
+import { Link } from 'react-router-dom'
+import { projects } from '../data/projects'
 
+const Projects = () => {
   return (
     <section className="mb-16">
-      <h2 className="section-title">Selected Projects</h2>
+      <h2 className="section-title">Projects</h2>
       <div className="quest-grid">
         {projects.map((project) => (
           <article key={project.title} className="quest-card">
@@ -61,9 +31,9 @@ const Projects = () => {
                 <span className="quest-tag">{project.tag}</span>
               </div>
 
-              <a href={project.link} className="accept-quest">
-                {project.linkLabel}
-              </a>
+              <Link to={`/projects/${project.slug}`} className="accept-quest">
+                View Project Details
+              </Link>
             </div>
           </article>
         ))}

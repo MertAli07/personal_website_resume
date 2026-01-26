@@ -8,8 +8,10 @@ import ProjectsPage from './pages/ProjectsPage'
 import NotesPage from './pages/NotesPage'
 import DiagramsPage from './pages/DiagramsPage'
 import DiagramDetailPage from './pages/DiagramDetailPage'
+import ProjectDetailPage from './pages/ProjectDetailPage'
 import CVPage from './pages/CVPage'
 import ContactPage from './pages/ContactPage'
+import EventsPage from './pages/EventsPage'
 
 function App() {
   return (
@@ -21,7 +23,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/projects/:slug" element={<ProjectDetailPage />} />
             <Route path="/notes" element={<NotesPage />} />
+            <Route path="/events" element={<EventsPage />} />
             <Route path="/diagrams" element={<DiagramsPage />} />
             <Route path="/diagrams/:slug" element={<DiagramDetailPage />} />
             <Route path="/cv" element={<CVPage />} />

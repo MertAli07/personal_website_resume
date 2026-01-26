@@ -35,6 +35,12 @@ const Home = () => {
               Essays, design decisions, and patterns
             </p>
           </Link>
+          <Link to="/events" className="card no-underline block hover:scale-[1.02] transition-transform">
+            <h3 className="m-0 text-[1.3rem] text-[var(--accent)] mb-2">Events</h3>
+            <p className="text-[var(--muted)] text-[0.95rem] m-0">
+              Talks, workshops, and gatherings
+            </p>
+          </Link>
           <Link to="/diagrams" className="card no-underline block hover:scale-[1.02] transition-transform">
             <h3 className="m-0 text-[1.3rem] text-[var(--accent)] mb-2">Diagrams</h3>
             <p className="text-[var(--muted)] text-[0.95rem] m-0">
