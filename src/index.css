@@ -89,6 +89,12 @@
       --quest-ribbon: #c84b55;
       --quest-wax: #9b2f35;
     }
+
+    :root:not(.light):not(.dark) .stack-tag {
+      color: var(--text);
+      background: color-mix(in srgb, var(--accent) 22%, transparent);
+      border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+    }
   }
 
   body {
@@ -161,6 +167,23 @@
   .card:hover {
     @apply -translate-y-1;
     box-shadow: 0 12px 28px rgba(122, 153, 193, 0.15);
+  }
+
+  .card-static {
+    @apply transition-none;
+  }
+
+  .card-static:hover {
+    @apply translate-y-0;
+    box-shadow: none;
+  }
+
+  .card-static::before {
+    transition: none;
+  }
+
+  .card-static:hover::before {
+    @apply left-[-100%];
   }
 
   .tag {
@@ -329,6 +352,12 @@
     font-size: 0.8rem;
     color: var(--quest-muted);
     letter-spacing: 0.5px;
+  }
+
+  :root.dark .stack-tag {
+    color: var(--text);
+    background: color-mix(in srgb, var(--accent) 22%, transparent);
+    border-color: color-mix(in srgb, var(--accent) 45%, transparent);
   }
 
   .quest-status {

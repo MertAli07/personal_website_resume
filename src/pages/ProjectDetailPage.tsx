@@ -23,7 +23,7 @@ const ProjectDetailPage = () => {
       <p className="text-[var(--muted)] text-[0.95rem] my-[0.6rem]">{project.description}</p>
 
       <div className="mt-6 grid gap-6 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
-        <div className="card">
+        <div className="card card-static">
           <h3 className="m-0 text-[1.2rem] text-[var(--accent)]">Overview</h3>
           <p className="text-[var(--muted)] mt-3">{project.details}</p>
 
@@ -39,17 +39,7 @@ const ProjectDetailPage = () => {
           </div>
         </div>
 
-        <div className="card flex flex-col gap-4">
-          <div>
-            <span className="text-[0.75rem] uppercase tracking-[0.2em] text-[var(--muted)]">
-              Status
-            </span>
-            <div className={`quest-status ${project.statusClass} mt-2`}>
-              <span className="status-dot"></span>
-              <span>{project.statusLabel}</span>
-            </div>
-          </div>
-
+        <div className="card card-static flex flex-col gap-4">
           <div>
             <span className="text-[0.75rem] uppercase tracking-[0.2em] text-[var(--muted)]">
               Timeline
@@ -70,7 +60,7 @@ const ProjectDetailPage = () => {
             </span>
             <div className="mt-2 flex flex-wrap gap-2">
               {project.stack.map((item) => (
-                <span key={item} className="quest-tag">
+                <span key={item} className="quest-tag stack-tag">
                   {item}
                 </span>
               ))}
