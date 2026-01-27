@@ -1,31 +1,7 @@
-const Events = () => {
-  const events = [
-    {
-      type: 'Talk',
-      title: 'Designing Reliable RAG Systems',
-      description: 'A field guide to retrieval quality, evaluation loops, and failure modes.',
-      date: 'Feb 14, 2026',
-      location: 'Istanbul, TR',
-      status: 'Upcoming',
-    },
-    {
-      type: 'Workshop',
-      title: 'Agent Orchestration Patterns',
-      description: 'Hands-on session for multi-agent routing, memory, and guardrails.',
-      date: 'Mar 6, 2026',
-      location: 'Online',
-      status: 'Registration Open',
-    },
-    {
-      type: 'Panel',
-      title: 'Data Systems for Applied AI',
-      description: 'Discussion on data contracts, pipelines, and deployment realities.',
-      date: 'Apr 20, 2026',
-      location: 'Berlin, DE',
-      status: 'Invitation',
-    },
-  ]
+import { Link } from 'react-router-dom'
+import { events } from '../data/events'
 
+const Events = () => {
   return (
     <section className="mb-16">
       <h2 className="section-title">Events</h2>
@@ -35,7 +11,7 @@ const Events = () => {
 
       <div className="mt-8 grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-6">
         {events.map((event) => (
-          <article key={event.title} className="card flex flex-col gap-4">
+          <article key={event.slug} className="card flex flex-col gap-4">
             <div className="flex flex-col gap-2">
               <span className="text-[0.75rem] uppercase tracking-[0.2em] text-[var(--muted)]">
                 {event.type}
@@ -49,8 +25,11 @@ const Events = () => {
               <p className="m-0">Location: {event.location}</p>
             </div>
 
-            <div className="mt-auto flex flex-wrap gap-2">
+            <div className="mt-auto flex flex-wrap items-center gap-2">
               <span className="tag">{event.status}</span>
+              <Link to={`/events/${event.slug}`} className="read-note ml-auto">
+                View Details →
+              </Link>
             </div>
           </article>
         ))}

@@ -13,6 +13,8 @@ export type Project = {
   highlights: string[]
 }
 
+
+
 export const projects: Project[] = [
   {
     "slug": "metu-mail-assistant-ai",

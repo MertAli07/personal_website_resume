@@ -6,12 +6,14 @@ import { ThemeProvider } from './hooks/useTheme'
 import Home from './pages/Home'
 import ProjectsPage from './pages/ProjectsPage'
 import NotesPage from './pages/NotesPage'
+import NoteDetailPage from './pages/NoteDetailPage'
 import DiagramsPage from './pages/DiagramsPage'
 import DiagramDetailPage from './pages/DiagramDetailPage'
 import ProjectDetailPage from './pages/ProjectDetailPage'
 import CVPage from './pages/CVPage'
 import ContactPage from './pages/ContactPage'
 import EventsPage from './pages/EventsPage'
+import EventDetailPage from './pages/EventDetailPage'
 
 function App() {
   return (
@@ -25,7 +27,9 @@ function App() {
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/projects/:slug" element={<ProjectDetailPage />} />
             <Route path="/notes" element={<NotesPage />} />
+            <Route path="/notes/:slug" element={<NoteDetailPage />} />
             <Route path="/events" element={<EventsPage />} />
+            <Route path="/events/:slug" element={<EventDetailPage />} />
             <Route path="/diagrams" element={<DiagramsPage />} />
             <Route path="/diagrams/:slug" element={<DiagramDetailPage />} />
             <Route path="/cv" element={<CVPage />} />
