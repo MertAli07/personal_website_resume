@@ -1,7 +1,33 @@
+import cvPdf from '../assets/pdf/Mert_Ali_Yalçın_CV_no_phone.pdf'
+
 const CV = () => {
   return (
     <section className="mb-16">
-      <h2 className="section-title">Curriculum Vitae</h2>
+      <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
+        <h2 className="section-title mb-0">Curriculum Vitae</h2>
+        <a
+          className="inline-flex items-center gap-2 rounded-lg border border-[var(--accent)] px-4 py-2 text-sm font-semibold text-[var(--accent)] transition hover:bg-[var(--accent)] hover:text-[var(--bg)]"
+          href={cvPdf}
+          download="Mert Ali Yalcin CV.pdf"
+          aria-label="Download CV PDF"
+        >
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            className="h-4 w-4"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M12 3v12" />
+            <path d="m7 10 5 5 5-5" />
+            <path d="M5 21h14" />
+          </svg>
+          Download CV
+        </a>
+      </div>
       
       {/* Personal Information */}
       <div className="card mb-8">

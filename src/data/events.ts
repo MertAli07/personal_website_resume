@@ -1,3 +1,9 @@
+import jwMarriotImage1 from '../assets/images/events/jw_marriot/1765442696062.jpg'
+import jwMarriotImage2 from '../assets/images/events/jw_marriot/1765442698706.jpg'
+import jwMarriotImage3 from '../assets/images/events/jw_marriot/WhatsApp Image 2026-01-31 at 11.53.35.jpeg'
+import btkImage1 from '../assets/images/events/btk/1.jpeg'
+import btkImage2 from '../assets/images/events/btk/2.jpeg'
+
 export type Event = {
   type: string
   title: string
@@ -7,6 +13,7 @@ export type Event = {
   status: string
   slug: string
   details: string
+  images?: string[]
 }
 
 export const events: Event[] = [
@@ -18,6 +25,7 @@ export const events: Event[] = [
     location: 'JW Marriott Ankara, TR',
     status: 'Completed',
     slug: 'aws-generative-ai-experience-day',
+    images: [jwMarriotImage1, jwMarriotImage2, jwMarriotImage3],
     details: `## AWS Generative AI Experience Day
 
 We are delighted to share the success of our **AWS Generative AI Experience Day**, held on December 4th at JW Marriott Ankara in collaboration with AWS Türkiye.
@@ -46,6 +54,7 @@ This event marks only the beginning of our journey to help organizations build s
     location: 'BTK Ankara, TR',
     status: 'Completed',
     slug: 'kamu-bilisim-dernegi-kamu-dijital-donusum-zirvesi',
+    images: [btkImage1, btkImage2],
     details: `## Kamu Digital Transformation Summit (Kamu Bilişim Derneği)
 
 2 days, 1,000+ participants, 50+ speakers, 50+ projects: the Digital Türkiye vision came together in Ankara! 🏛️🚀

@@ -6,15 +6,16 @@ const Contact = () => {
       
       <div className="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-6">
         {/* Email */}
-        <div className="card">
+        <a
+          className="card block"
+          href="mailto:mertaliyalcin07@gmail.com"
+          aria-label="Email Mert Ali Yalcin"
+        >
           <h3 className="m-0 text-[1.3rem] text-[var(--accent)] mb-3">Email</h3>
-          <a 
-            href="mailto:mertaliyalcin07@gmail.com" 
-            className="text-[var(--muted)] hover:text-[var(--accent)] transition-colors break-all"
-          >
+          <span className="text-[var(--muted)] transition-colors break-all">
             mertaliyalcin07@gmail.com
-          </a>
-        </div>
+          </span>
+        </a>
 
         {/* Location */}
         <div className="card">
@@ -23,30 +24,32 @@ const Contact = () => {
         </div>
 
         {/* GitHub */}
-        <div className="card">
+        <a
+          className="card block"
+          href="https://github.com/MertAli07"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit GitHub profile"
+        >
           <h3 className="m-0 text-[1.3rem] text-[var(--accent)] mb-3">GitHub</h3>
-          <a 
-            href="https://github.com/MertAli07" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-[var(--muted)] hover:text-[var(--accent)] transition-colors"
-          >
+          <span className="text-[var(--muted)] transition-colors">
             github.com/MertAli07
-          </a>
-        </div>
+          </span>
+        </a>
 
         {/* LinkedIn */}
-        <div className="card">
+        <a
+          className="card block"
+          href="https://linkedin.com/in/mert-ali-yalcin"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit LinkedIn profile"
+        >
           <h3 className="m-0 text-[1.3rem] text-[var(--accent)] mb-3">LinkedIn</h3>
-          <a 
-            href="https://linkedin.com/in/mert-ali-yalcin" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-[var(--muted)] hover:text-[var(--accent)] transition-colors"
-          >
+          <span className="text-[var(--muted)] transition-colors">
             linkedin.com/in/mert-ali-yalcin
-          </a>
-        </div>
+          </span>
+        </a>
       </div>
     </section>
   )

@@ -207,6 +207,9 @@
       0 6px 25px rgba(0, 0, 0, 0.35),
       inset 0 1px 0 rgba(255, 255, 255, 0.25);
     color: var(--quest-text);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 
   .quest-card::before {
@@ -331,17 +334,29 @@
     color: var(--quest-muted);
     line-height: 1.6;
     font-size: 0.95rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .quest-body {
     padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    justify-items: flex-end;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: auto;
   }
 
   .quest-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.6rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
   }
 
   .quest-tag {
@@ -367,7 +382,7 @@
     padding: 0.5rem 1rem;
     border-radius: 6px;
     font-size: 0.85rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
   }
 
   .status-completed {
@@ -410,6 +425,7 @@
     background: color-mix(in srgb, var(--quest-highlight) 25%, transparent);
     font-weight: 500;
     letter-spacing: 0.5px;
+    white-space: nowrap;
   }
 
   .accept-quest:hover {
@@ -571,6 +587,80 @@
     letter-spacing: 1px;
   }
 
+  .event-carousel-frame {
+    margin-top: 1.5rem;
+  }
+
+  .event-carousel-preview {
+    height: 260px;
+  }
+
+  .event-carousel-preview img {
+    object-fit: contain;
+    background: rgba(0, 0, 0, 0.12);
+  }
+
+  @media (min-width: 768px) {
+    .event-carousel-preview {
+      height: 640px;
+    }
+  }
+
+  .event-carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: color-mix(in srgb, var(--grimoire-card) 70%, transparent);
+    border: 1px solid color-mix(in srgb, var(--grimoire-border) 60%, transparent);
+    color: var(--grimoire-text);
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .event-carousel-nav:hover {
+    transform: translateY(-50%) scale(1.05);
+    border-color: var(--grimoire-highlight);
+    color: var(--grimoire-highlight);
+  }
+
+  .event-carousel-nav.nav-prev {
+    left: 16px;
+  }
+
+  .event-carousel-nav.nav-next {
+    right: 16px;
+  }
+
+  .event-carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 1.2rem 1.8rem 1.6rem;
+  }
+
+  .event-carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--grimoire-border) 35%, transparent);
+    border: 1px solid color-mix(in srgb, var(--grimoire-border) 55%, transparent);
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .event-carousel-dot.active {
+    background: var(--grimoire-highlight);
+    border-color: var(--grimoire-highlight);
+    transform: scale(1.15);
+  }
+
   .card-content {
     padding: 2rem;
     position: relative;
@@ -648,6 +738,9 @@
     box-shadow:
       0 4px 20px rgba(0, 0, 0, 0.15),
       inset 0 1px 1px color-mix(in srgb, var(--accent) 20%, transparent);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 
   :root.light .spell-card {
@@ -788,6 +881,9 @@
 
   .spell-body {
     padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
   }
 
   .spell-description {
@@ -972,6 +1068,7 @@
     background: color-mix(in srgb, var(--accent) 10%, transparent);
     width: 100%;
     justify-content: center;
+    margin-top: auto;
   }
 
   .note-back {

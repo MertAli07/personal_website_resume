@@ -9,7 +9,7 @@ const Home = () => {
         </h1>
         <p className="max-w-[700px] mx-auto text-[var(--muted)] text-[1.1rem] mb-8">
           A wandering engineer in the lands of data, distributed systems, and applied AI.{' '}
-          Welcome to my personal lab — a place of slow thoughts, quiet spells, and crafted journeys.
+          Welcome to my personal lab — a place to store and display my notes, projects, and ideas.
         </p>
       </section>
 
