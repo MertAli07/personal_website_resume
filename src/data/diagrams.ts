@@ -13,13 +13,13 @@ export type Diagram = {
 export const diagrams: Diagram[] = [
   {
     slug: 'aws-agent-architecture',
-    title: 'METU Student Affairs',
-    description: 'Multi-agent METU Student Affairs Assistant System',
+    title: 'Mail Assistant System',
+    description: 'Multi-agent Mail Assistant System',
     previewImage: metuMailDiagramPreview
   },
   {
     slug: 'ministry-of-education',
-    title: 'Ministry of Education',
+    title: 'Website Chatbot',
     description: 'Scrape multimodal sources and build a knowledge pipeline',
     previewImage: ministryOfEducationDiagramPreview
   },
