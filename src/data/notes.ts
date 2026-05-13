@@ -1,5 +1,6 @@
 import awsGenAiContent from '../assets/notes/AWS GenAI.md?raw'
 import awsStepFunctionsContent from '../assets/notes/AWS Step Functions.md?raw'
+import claudeCodeContent from '../assets/notes/Claude Code.md?raw'
 import fineTuningContent from '../assets/notes/Fine Tuning.md?raw'
 import reinforcementLearningContent from '../assets/notes/Reinforcement Learning.md?raw'
 import genaiMoreYouKnowContent from '../assets/notes/genai_The More You Know🌈.md?raw'
@@ -19,6 +20,19 @@ export type Note = {
 }
 
 export const notes: Note[] = [
+  {
+    rank: 'Field Log',
+    title: 'Claude Code',
+    subtitle: 'Settings, skills, hooks, and workflow notes',
+    description:
+      'Practical notes for configuring Claude Code, using project instructions, skills, hooks, subagents, and common commands.',
+    date: 'May 12, 2026',
+    readTime: '4 min read',
+    tags: ['Claude Code', 'AI', 'Tools'],
+    rune: '✹',
+    slug: 'claude-code',
+    content: claudeCodeContent,
+  },
   {
     rank: 'Field Log',
     title: 'AWS GenAI Development',

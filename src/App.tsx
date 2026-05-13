@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Particles from './components/Particles'
+import PageTitle from './components/PageTitle'
 import { ThemeProvider } from './hooks/useTheme'
 import Home from './pages/Home'
 import ProjectsPage from './pages/ProjectsPage'
@@ -19,6 +20,7 @@ function App() {
   return (
     <ThemeProvider>
       <BrowserRouter>
+        <PageTitle />
         <Particles />
         <Header />
         <main className="max-w-[1080px] mx-auto px-8 py-10 pb-16 relative z-[1]">
